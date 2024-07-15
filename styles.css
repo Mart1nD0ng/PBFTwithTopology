@@ -62,17 +62,17 @@ body {
 }
 
 #animation_container {
-    flex: 1;
+    flex: 3;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative; /* 允许绝对定位 */
-    min-width: 700px;
+    min-width: 400px;
 }
 
 #results_container {
-    flex: 3;
+    flex: 1;
     overflow: auto;
     min-width: 400px;
 }
