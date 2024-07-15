@@ -72,7 +72,7 @@ body {
 }
 
 #results_container {
-    flex: 1;
+    flex: 2;
     overflow: auto;
     min-width: 400px;
 }
