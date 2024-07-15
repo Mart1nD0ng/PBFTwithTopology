@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBFT Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+</head>
+<body>
+<div id="sidebar">
+    <button id="toggleSidebar">☰</button>
+    <div id="sidebarContent">
+        <div class="form-group">
+            <label for="zoom_level">Zoom: </label>
+            <input type="range" id="zoom_level" min="0.5" max="2" step="0.1" value="1">
+        </div>
+        <div class="form-group">
+            <label for="bft_n">Nodes: </label>
+            <input type="number" id="bft_n" value="4">
+        </div>
+        <div class="form-group">
+            <label for="bft_m">Byzantine Nodes: </label>
+            <input type="number" id="bft_m" value="1">
+        </div>
+        <div class="form-group">
+            <label for="bft_faulty_proposer">Faulty Proposer</label>
+            <input type="checkbox" id="bft_faulty_proposer">
+        </div>
+        <div class="form-group">
+            <label for="bft_allow_tampering">Allow Tampering</label>
+            <input type="checkbox" id="bft_allow_tampering">
+        </div>
+        <div class="form-group">
+            <label for="topology">Topology: </label>
+            <select id="topology">
+                <option value="full">Full Connection</option>
+                <option value="tree">N-ary Tree</option>
+                <option value="ring">Ring</option>
+                <option value="star">Star</option>
+            </select>
+        </div>
+        <div class="form-group" id="n_value_group" style="display: none;">
+            <label for="n_value">N value for N-ary Tree: </label>
+            <input type="number" id="n_value" value="2" min="2">
+        </div>
+        <div class="form-group">
+            <label for="animation_speed">Animation Speed: </label>
+            <input type="range" id="animation_speed" min="1" max="60" step="1" value="30">
+        </div>
+        <button id="bft_exec">Execute</button>
+    </div>
+</div>
+<div id="main_container">
+    <div id="animation_container" class="card">
+        <canvas id="bft_screen" width="400" height="400"></canvas>
+    </div>
+    <div id="results_container" class="card">
+        <div id="bft_list_container">
+            <h4>Connection Probability Matrix</h4>
+            <div id="matrixScroll">
+                <div>
+                    <table id="probabilityMatrix" class="styled-table"></table>
+                </div>
+            </div>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Node</th>
+                        <th>PP</th>
+                        <th>P</th>
+                        <th>C</th>
+                    </tr>
+                </thead>
+                <tbody id="bft_list"></tbody>
+            </table>
+        </div>
+        <div id="bft_conclusion" class="badge"></div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="module" src="scripts.js"></script>
+</body>
+</html>
