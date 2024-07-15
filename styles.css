@@ -68,7 +68,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative; /* 允许绝对定位 */
-    min-width: 400px;
+    min-width: 700px;
 }
 
 #results_container {
